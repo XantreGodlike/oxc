@@ -15,6 +15,7 @@ mod import {
     pub mod no_named_as_default;
     pub mod no_named_as_default_member;
     pub mod no_self_import;
+    pub mod no_duplicates;
 }
 
 mod deepscan {
@@ -546,6 +547,7 @@ oxc_macros::declare_all_lint_rules! {
     import::no_self_import,
     import::no_amd,
     import::export,
+    import::no_duplicates,
     jsx_a11y::alt_text,
     jsx_a11y::anchor_has_content,
     jsx_a11y::anchor_is_valid,
