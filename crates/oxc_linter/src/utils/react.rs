@@ -1,3 +1,4 @@
+use mime_guess::Iter;
 use oxc_ast::{
     ast::{
         CallExpression, Expression, JSXAttributeItem, JSXAttributeName, JSXAttributeValue,
@@ -208,6 +209,13 @@ pub fn get_parent_es5_component<'a, 'b>(
     ctx.nodes().ancestors(node.id()).skip(1).find_map(|node_id| {
         is_es5_component(ctx.nodes().get_node(node_id)).then(|| ctx.nodes().get_node(node_id))
     })
+}
+
+/* struct ReturnsIter {
+  curr: Box
+} */
+
+pub fn iter_of_returns<'a>(node: &'a AstNode<'a>) -> impl Iterator<Item = &'a AstNode<'a>> {
 }
 
 pub fn get_parent_es6_component<'a, 'b>(ctx: &'b LintContext<'a>) -> Option<&'b AstNode<'a>> {

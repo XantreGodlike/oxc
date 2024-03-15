@@ -177,6 +177,7 @@ mod react {
     pub mod no_unescaped_entities;
     pub mod no_unknown_property;
     pub mod react_in_jsx_scope;
+    pub mod display_name;
     pub mod require_render_return;
     pub mod void_dom_elements_no_children;
 }
@@ -549,6 +550,7 @@ oxc_macros::declare_all_lint_rules! {
     react::no_unknown_property,
     react::require_render_return,
     react::void_dom_elements_no_children,
+    react::display_name,
     react_perf::jsx_no_jsx_as_prop,
     react_perf::jsx_no_new_array_as_prop,
     react_perf::jsx_no_new_function_as_prop,
